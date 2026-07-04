@@ -31,7 +31,6 @@ wheels/
 .coverage
 htmlcov/
 .pytest_cache/
-test_results/
 
 # Логи
 *.log
