@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_counting_categories.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -574,7 +574,7 @@ jQuery.cookie = function(name, value, options) {
             <div id="header">
                 <div class="time" xmlns="">0 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">2 total, </span><span class="passed">2 passed</span></strong>
+                    pytest в test_counting_categories.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">5 total, </span><span class="passed">5 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -599,25 +599,55 @@ jQuery.cookie = function(name, value, options) {
                             <li class="level suite open">
                                 <span><em class="time">
                                         <div class="time">0 ms</div>
-                                    </em>test_decorators</span>
+                                    </em>test_counting_categories</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_log_success_stdout</span>
+                                            </em><em class="status">passed</em>test_filter_by_description_success</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED                 [ 50%]<br/></span>
+                                                <span class="stdout">tests/test_counting_categories.py::test_filter_by_description_success PASSED [ 20%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_log_error_stdout</span>
+                                            </em><em class="status">passed</em>test_filter_by_description_ignore_case</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED                   [100%]<br/></span>
+                                                <span class="stdout">tests/test_counting_categories.py::test_filter_by_description_ignore_case PASSED [ 40%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_filter_by_description_with_special_characters</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_counting_categories.py::test_filter_by_description_with_special_characters PASSED [ 60%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_filter_by_description_empty_search</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_counting_categories.py::test_filter_by_description_empty_search PASSED [ 80%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_filter_by_description_no_matches</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_counting_categories.py::test_filter_by_description_no_matches PASSED [100%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
@@ -629,7 +659,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 24.05.2026, 12:31</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:04</p>
         </div>
     </body>
 </html>

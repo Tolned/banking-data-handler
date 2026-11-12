@@ -1,59 +1,81 @@
-import unittest
+"""
+Модуль тестирования функции загрузки транзакций из JSON-файлов (load_transactions).
+
+Проверяет обработку всех возможных сценариев: успешное чтение списка,
+отсутствие файла, пустой файл, неверную структуру JSON (словарь вместо списка),
+ошибки парсинга (JSONDecodeError) и ошибки ввода-вывода (OSError).
+"""
+
+# Инструменты для подмены встроенных функций (open, os.path.exists) и создания мок-файлов
 from unittest.mock import mock_open, patch
 
+# Импорт тестируемой функции загрузки транзакций из модуля utils
 from src.utils import load_transactions
 
 
-class TestLoadTransactions(unittest.TestCase):
-
-    @patch('os.path.exists', return_value=False)
-    def test_file_not_found(self, mock_exists):
-        """Тест: Файл не найден."""
-        result = load_transactions('non_existent_file.json')
-        self.assertEqual(result, [])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', new_callable=mock_open, read_data='')
-    def test_file_is_empty(self, mock_file, mock_exists):
-        """Тест: Файл существует, но пустой."""
-        result = load_transactions('empty.json')
-        self.assertEqual(result, [])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', new_callable=mock_open, read_data='[]')
-    def test_json_is_empty_list(self, mock_file, mock_exists):
-        """Тест: В файле содержится пустой список []."""
-        result = load_transactions('empty_list.json')
-        self.assertEqual(result, [])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', new_callable=mock_open, read_data='[{"id": 1, "amount": 100}]')
-    def test_valid_json_list(self, mock_file, mock_exists):
-        """Тест: Успешная загрузка списка транзакций."""
-        result = load_transactions('valid.json')
-        self.assertEqual(result, [{"id": 1, "amount": 100}])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', new_callable=mock_open, read_data='{"not_a_list": "value"}')
-    def test_json_is_not_list(self, mock_file, mock_exists):
-        """Тест: JSON не является списком (например, передан словарь)."""
-        result = load_transactions('not_a_list.json')
-        self.assertEqual(result, [])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', new_callable=mock_open, read_data='некорректный json контент')
-    def test_json_decode_error(self, mock_file, mock_exists):
-        """Тест: Ошибка декодирования JSON."""
-        result = load_transactions('invalid_format.json')
-        self.assertEqual(result, [])
-
-    @patch('os.path.exists', return_value=True)
-    @patch('builtins.open', side_effect=IOError)
-    def test_io_error(self, mock_file, mock_exists):
-        """Тест: Ошибка ввода-вывода (IOError) при чтении файла."""
-        result = load_transactions('io_error_file.json')
-        self.assertEqual(result, [])
+def test_load_transactions_file_not_found() -> None:
+    """Тест возврата пустого списка, если файл не найден на диске."""
+    with patch("os.path.exists", return_value=False):
+        result = load_transactions("non_existent_file.json")
+        assert result == []
 
 
-if __name__ == '__main__':
-    unittest.main()
+def test_load_transactions_file_is_empty() -> None:
+    """Тест возврата пустого списка, если файл существует, но абсолютно пустой."""
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", mock_open(read_data="")),
+    ):
+        result = load_transactions("empty.json")
+        assert result == []
+
+
+def test_load_transactions_json_is_empty_list() -> None:
+    """Тест возврата пустого списка, если в JSON записан пустой массив []."""
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", mock_open(read_data="[]")),
+    ):
+        result = load_transactions("empty_list.json")
+        assert result == []
+
+
+def test_load_transactions_valid_json_list() -> None:
+    """Тест успешной загрузки валидного списка банковских транзакций."""
+    sample_json = '[{"id": 1, "amount": 100}]'
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", mock_open(read_data=sample_json)),
+    ):
+        result = load_transactions("valid.json")
+        assert result == [{"id": 1, "amount": 100}]
+
+
+def test_load_transactions_json_is_not_list() -> None:
+    """Тест возврата пустого списка, если корневой элемент JSON — словарь, а не список."""
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", mock_open(read_data='{"not_a_list": "value"}')),
+    ):
+        result = load_transactions("not_a_list.json")
+        assert result == []
+
+
+def test_load_transactions_json_decode_error() -> None:
+    """Тест возврата пустого списка при синтаксической ошибке внутри JSON-файла."""
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", mock_open(read_data="некорректный json контент")),
+    ):
+        result = load_transactions("invalid_format.json")
+        assert result == []
+
+
+def test_load_transactions_io_error() -> None:
+    """Тест возврата пустого списка при ошибке ввода-вывода (OSError) во время чтения."""
+    with (
+        patch("os.path.exists", return_value=True),
+        patch("builtins.open", side_effect=OSError("Ошибка доступа к диску")),
+    ):
+        result = load_transactions("io_error_file.json")
+        assert result == []

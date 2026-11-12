@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_masks.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -574,7 +574,7 @@ jQuery.cookie = function(name, value, options) {
             <div id="header">
                 <div class="time" xmlns="">0 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">1 total, </span><span class="passed">1 passed</span></strong>
+                    pytest в test_masks.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">14 total, </span><span class="passed">14 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -599,15 +599,159 @@ jQuery.cookie = function(name, value, options) {
                             <li class="level suite open">
                                 <span><em class="time">
                                         <div class="time">0 ms</div>
-                                    </em>test_main</span>
+                                    </em>test_masks</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_main_invalid_menu_choice</span>
+                                            </em><em class="status">passed</em>test_get_mask_card_number_with_name</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED                 [100%]<br/></span>
+                                                <span class="stdout">tests/test_masks.py::test_get_mask_card_number_with_name PASSED          [  7%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_get_mask_card_number_only_digits</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_masks.py::test_get_mask_card_number_only_digits PASSED        [ 14%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_get_mask_card_number_parametrized</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(Maestro 1596837868705199-Maestro 1596 83** **** 5199)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_card_number_parametrized[Maestro 1596837868705199-Maestro 1596 83** **** 5199] PASSED [ 21%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(MasterCard 7158300734726758-MasterCard 7158 30** **** 6758)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_card_number_parametrized[MasterCard 7158300734726758-MasterCard 7158 30** **** 6758] PASSED [ 28%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(Visa 12345-Visa 12345)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_card_number_parametrized[Visa 12345-Visa 12345] PASSED [ 35%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(-)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_card_number_parametrized[-] PASSED    [ 42%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(None-)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_card_number_parametrized[None-] PASSED [ 50%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_get_mask_account_number_with_name</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_masks.py::test_get_mask_account_number_with_name PASSED       [ 57%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_get_mask_account_number_parametrized</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(\u0421\u0447\u0435\u0442 73654108430135874305-\u0421\u0447\u0435\u0442 **4305)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[\u0421\u0447\u0435\u0442 73654108430135874305-\u0421\u0447\u0435\u0442 **4305] PASSED [ 64%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 9876543210-\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 **3210)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 9876543210-\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 **3210] PASSED [ 71%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(73654108430135874305-**4305)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[73654108430135874305-**4305] PASSED [ 78%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(123-123)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[123-123] PASSED [ 85%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(-)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[-] PASSED [ 92%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(None-)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_masks.py::test_get_mask_account_number_parametrized[None-] PASSED [100%]<br/></span>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
@@ -619,7 +763,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 01.06.2026, 01:07</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:10</p>
         </div>
     </body>
 </html>

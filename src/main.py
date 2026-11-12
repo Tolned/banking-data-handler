@@ -1,24 +1,38 @@
-from src.masks import get_mask_card_number
+"""
+Главный модуль приложения для обработки и фильтрации банковских транзакций.
+
+Объединяет загрузку данных из JSON, CSV и XLSX, фильтрацию по статусу,
+валюте и ключевым словам, а также форматированный вывод операций в консоль.
+"""
+
+# Встроенный модуль для безопасного построения путей к файлам проекта
+from pathlib import Path
+
+# Импорт функций из внутренних модулей проекта
+from src.masks import get_mask_card_number  # Замените на mask_account_card из src.widget, если он реализован
 from src.pandas_library import read_transactions, read_transactions_from_excel
 from src.processing import filter_by_state, sort_by_date
 from src.utils import load_transactions
 
+# Определяем путь к папке data в корне проекта (на уровень выше папки src)
+BASE_DIR = Path(__file__).resolve().parent.parent
+JSON_FILE_PATH = BASE_DIR / "data" / "operations.json"
+
 
 def main() -> None:
-    """Основная логика проекта для взаимодействия с пользователем."""
+    """Основная логика проекта для консольного взаимодействия с пользователем."""
     print("Привет! Добро пожаловать в программу работы с банковскими транзакциями.")
     print("Выберите необходимый пункт меню:")
     print("1. Получить информацию о транзакциях из JSON-файла")
     print("2. Получить информацию о транзакциях из CSV-файла")
     print("3. Получить информацию о транзакциях из XLSX-файла")
 
-    # 1. Выбор файла
+    # 1. Выбор источника данных
     choice = input("\nПользователь: ").strip()
 
     if choice == "1":
         print("\nПрограмма: Для обработки выбран JSON-файл.")
-        file_path = "../data/operations.json"
-        transactions = load_transactions(file_path)
+        transactions = load_transactions(str(JSON_FILE_PATH))
     elif choice == "2":
         print("\nПрограмма: Для обработки выбран CSV-файл.")
         transactions = read_transactions()
@@ -33,7 +47,7 @@ def main() -> None:
         print("\nПрограмма: Данные не загружены или файл пуст.")
         return
 
-    # 2. Фильтрация по статусу (с валидацией)
+    # 2. Фильтрация по статусу операции (с проверкой корректности ввода)
     valid_statuses = ["EXECUTED", "CANCELED", "PENDING"]
     while True:
         print("\nПрограмма: Введите статус, по которому необходимо выполнить фильтрацию.")
@@ -44,8 +58,8 @@ def main() -> None:
             transactions = filter_by_state(transactions, status_input)
             print(f'\nПрограмма: Операции отфильтрованы по статусу "{status_input}"')
             break
-        else:
-            print(f'\nПрограмма: Статус операции "{status_input}" недоступен.')
+
+        print(f'\nПрограмма: Статус операции "{status_input}" недоступен.')
 
     # 3. Сортировка по дате
     print("\nПрограмма: Отсортировать операции по дате? Да/Нет")
@@ -54,37 +68,34 @@ def main() -> None:
     if sort_choice == "да":
         print("\nПрограмма: Отсортировать по возрастанию или по убыванию?")
         order_choice = input("\nПользователь: ").strip().lower()
-        descending = True if "убыванию" in order_choice else False
+        descending = "убыванию" in order_choice
         transactions = sort_by_date(transactions, descending=descending)
 
-    # 4. Фильтрация по валюте (Рубли) — УНИВЕРСАЛЬНАЯ
+    # 4. Фильтрация по рублевым транзакциям (поддерживает форматы JSON и CSV/XLSX)
     print("\nПрограмма: Выводить только рублевые транзакции? Да/Нет")
     rub_choice = input("\nПользователь: ").strip().lower()
 
     if rub_choice == "да":
-        # Проверяем структуру JSON и плоскую структуру CSV/Excel одновременно
         transactions = [
-            t for t in transactions
+            t
+            for t in transactions
             if t.get("currency_code") == "RUB"
             or t.get("currency") == "RUB"
-            or t.get("operationAmount", {}).get("currency", {}).get("code") == "RUB"
+            or (
+                isinstance(t.get("operationAmount"), dict)
+                and t["operationAmount"].get("currency", {}).get("code") == "RUB"
+            )
         ]
-        # Отладочный принт, теперь он не будет пустым для CSV/Excel!
-        print(f"\n[ОТЛАДКА] Найдено рублевых транзакций: {len(transactions)}")
 
-    # 5. Фильтрация по слову в описании
+    # 5. Фильтрация по ключевому слову в описании операции
     print("\nПрограмма: Отфильтровать список транзакций по определенному слову в описании? Да/Нет")
     word_choice = input("\nПользователь: ").strip().lower()
 
     if word_choice == "да":
         search_word = input("\nВведите слово для поиска: ").strip().lower()
-        # Убрана ошибочная функция filter_by_currency
-        transactions = [
-            t for t in transactions
-            if search_word in t.get("description", "").lower()
-        ]
+        transactions = [t for t in transactions if search_word in str(t.get("description") or "").lower()]
 
-    # 6. Вывод результатов
+    # 6. Форматирование и вывод итогового списка транзакций
     print("\nПрограмма: Распечатываю итоговый список транзакций...\n")
 
     if not transactions:
@@ -94,40 +105,43 @@ def main() -> None:
     print(f"Всего банковских операций в выборке: {len(transactions)}\n")
 
     for t in transactions:
-        # Извлечение и форматирование даты
-        date_str = t.get("date", "")[:10]
-        if date_str and "-" in date_str:
-            date_str = ".".join(reversed(date_str.split("-")))
+        # Приводим дату из формата YYYY-MM-DD... к виду ДД.ММ.ГГГГ
+        raw_date = str(t.get("date") or "")[:10]
+        if raw_date and "-" in raw_date:
+            date_str = ".".join(reversed(raw_date.split("-")))
         else:
             date_str = "Нет даты"
 
-        descr = t.get("description", "Без описания")
+        descr = str(t.get("description") or "Без описания")
 
-        # Извлечение суммы и валюты под оба формата файлов
-        if "operationAmount" in t and isinstance(t["operationAmount"], dict):
-            amount = t["operationAmount"].get("amount", "0")
-            currency = t["operationAmount"].get("currency", {}).get("code", "")
+        # Извлекаем сумму и код валюты с учетом различий между JSON и CSV/XLSX
+        operation_amount = t.get("operationAmount")
+        if isinstance(operation_amount, dict):
+            amount = operation_amount.get("amount", "0")
+            currency = operation_amount.get("currency", {}).get("code", "")
         else:
             amount = t.get("amount", "0")
             currency = t.get("currency_code") or t.get("currency") or ""
 
-        # Форматирование суммы до копеек
+        # Форматируем сумму до двух знаков после запятой
         try:
-            amount = f"{float(amount):.2f}"
+            formatted_amount = f"{float(amount):.2f}"
         except (ValueError, TypeError):
-            amount = str(amount)
+            formatted_amount = str(amount)
 
-        # Маскирование счетов/карт перед выводом
-        from_info = get_mask_card_number(t.get("from", ""))
-        to_info = get_mask_card_number(t.get("to", ""))
+        # Маскируем номера счетов или карт отправителя и получателя
+        raw_from = str(t.get("from") or "")
+        raw_to = str(t.get("to") or "")
+        from_info = get_mask_card_number(raw_from) if raw_from else ""
+        to_info = get_mask_card_number(raw_to) if raw_to else ""
 
-        # Вывод в требуемом красивом формате
+        # Выводим карточку операции в консоль
         print(f"{date_str} {descr}")
         if from_info and to_info:
             print(f"{from_info} -> {to_info}")
         elif to_info:
             print(f"{to_info}")
-        print(f"Сумма: {amount} {currency}\n")
+        print(f"Сумма: {formatted_amount} {currency}\n")
 
 
 if __name__ == "__main__":  # pragma: no cover

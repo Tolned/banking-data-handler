@@ -1,13 +1,69 @@
-@"
-# Python
+# Файл содержит список файлов и папок, которые Git не отслеживает
+
+# Скомпилированные файлы Python (временный байт-код для ускорения работы)
 __pycache__/
-*.py[cod]
+*.py[codz]
 *$py.class
 *.so
-.Python
+
+# Виртуальные окружения и файлы с секретами/паролями
+.env
+.envrc
+.venv
 env/
 venv/
 ENV/
+env.bak/
+venv.bak/
+conda-meta/
+
+# Кэш тестов, линтеров и отчеты о покрытии кода (pytest, coverage, mypy, ruff)
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+*.lcov
+.hypothesis/
+.pytest_cache/
+cover/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Настройки редакторов кода (PyCharm, VS Code) и системные файлы (macOS, Windows)
+.idea/
+.vscode/
+tempCodeRunnerFile.py
+.spyderproject
+.spyproject
+.ropeproject
+.DS_Store
+Thumbs.db
+
+# Менеджеры пакетов (lock-файлы закомментированы, чтобы они сохранялись в Git)
+# poetry.lock
+# poetry.toml
+# uv.lock
+# Pipfile.lock
+# pdm.lock
+# pdm.toml
+.pdm-python
+.pdm-build/
+.pixi/*
+!.pixi/config.toml
+__pypackages__/
+
+# Сборка пакетов, дистрибутивов и исполняемых файлов (PyPI, PyInstaller)
+.Python
 build/
 develop-eggs/
 dist/
@@ -20,26 +76,49 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+cython_debug/
+.pypirc
 
-# PyCharm / IntelliJ
-.idea/
-
-# Тесты и покрытие
-.coverage
-htmlcov/
-.pytest_cache/
-
-# Логи
+# Логи, локальные базы данных и секреты веб-фреймворков (Django, Flask, Streamlit)
 *.log
-logs/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+.scrapy
+.streamlit/secrets.toml
+.abstra/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Poetry
-poetry.lock
-"@ | Out-File -Encoding utf8 .gitignore
+# Интерактивные блокноты (Jupyter, IPython, Marimo), документация и очереди задач
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+docs/_build/
+.pybuilder/
+target/
+/site
+celerybeat-schedule*
+celerybeat.pid
+*.rdb
+*.aof
+*.pid
+mnesia/
+rabbitmq/
+rabbitmq-data/
+activemq-data/
+*.mo
+*.pot
+*.sage.py

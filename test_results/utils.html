@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; pytest в test_masks.py</title>
+        <title>Test Results &mdash; pytest в test_utils.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">0 ms</div>
+                <div class="time" xmlns="">5 ms</div>
                 <h1>
-                    pytest в test_masks.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">9 total, </span><span class="passed">9 passed</span></strong>
+                    pytest в test_utils.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">7 total, </span><span class="passed">7 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,108 +593,81 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">0 ms</div>
+                                <div class="time">5 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">0 ms</div>
-                                    </em>test_masks</span>
+                                        <div class="time">5 ms</div>
+                                    </em>test_utils</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_get_mask_card_number_with_name</span>
+                                            </em><em class="status">passed</em>test_load_transactions_file_not_found</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED          [ 11%]<br/></span>
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_file_not_found PASSED        [ 14%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_load_transactions_file_is_empty</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_file_is_empty PASSED         [ 28%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_load_transactions_json_is_empty_list</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_json_is_empty_list PASSED    [ 42%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_load_transactions_valid_json_list</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_valid_json_list PASSED       [ 57%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_load_transactions_json_is_not_list</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_json_is_not_list PASSED      [ 71%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_load_transactions_json_decode_error</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_json_decode_error PASSED     [ 85%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_get_mask_card_number_only_digits</span>
+                                            </em><em class="status">passed</em>test_load_transactions_io_error</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED        [ 22%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_get_mask_account_number_with_name</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED       [ 33%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level suite open">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em>test_get_mask_account_number_parametrized</span>
-                                        <ul>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(\u0421\u0447\u0435\u0442 73654108430135874305-\u0421\u0447\u0435\u0442 **4305)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 44%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 9876543210-\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0447\u0435\u0442 **3210)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 55%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(73654108430135874305-**4305)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 66%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(123-123)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 77%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(-)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 88%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(None-)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [100%]<br/></span>
-                                                    </li>
-                                                </ul>
+                                                <span class="stdout">tests/test_utils.py::test_load_transactions_io_error PASSED              [100%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
@@ -706,7 +679,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 04.07.2026, 02:28</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:14</p>
         </div>
     </body>
 </html>
