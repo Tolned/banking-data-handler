@@ -56,4 +56,3 @@ dev = [
 # Специфичные настройки Poetry
 [tool.poetry]
 package-mode = false
-
