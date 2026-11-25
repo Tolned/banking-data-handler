@@ -1,0 +1,49 @@
+[project]
+name = "pythonproject"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+requires-python = "^3.14"
+dependencies = [
+    "transaction (>=5.1,<6.0)",
+    "transactions (>=0.2.0,<0.3.0)",
+    "click (>=8.4.1,<9.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "requests (>=2.34.2,<3.0.0)",
+    "ppicounter (>=0.2.2,<0.3.0)",
+    "params (>=0.9.0,<0.10.0)",
+    "utils (>=1.0.2,<2.0.0)",
+    "masks (>=0.1.3,<0.2.0)",
+    "pandas-stubs (>=3.0.3,<3.1.0)",
+    "pandas (>=3.0.3,<4.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+
+[tool.isort]
+line_length = 119
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = "venv"
+
+[dependency-groups]
+lint = [
+    "flake8 (>=7.3.0,<8.0.0)",
+    "mypy (>=1.20.0,<2.0.0)",
+    "black (>=26.3.1,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)"
+]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "pytest-mock (>=3.15.1,<4.0.0)"
+]
