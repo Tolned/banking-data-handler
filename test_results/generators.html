@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_generators.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">2 ms</div>
+                <div class="time" xmlns="">0 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">11 total, </span><span class="passed">11 passed</span></strong>
+                    pytest в test_generators.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">18 total, </span><span class="passed">18 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,133 +593,217 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">2 ms</div>
+                                <div class="time">0 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
-                                    </em>test_widget</span>
+                                        <div class="time">0 ms</div>
+                                    </em>test_generators</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_mask_account_card_visa</span>
+                                            </em><em class="status">passed</em>test_filter_by_currency_empty_list</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED                 [  9%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_mask_account_card_mastercard</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED           [ 18%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_mask_account_card_account</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED              [ 27%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_mask_account_card_maestro</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED              [ 36%]<br/></span>
+                                                <span class="stdout">tests/test_generators.py::test_filter_by_currency_empty_list PASSED      [  5%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level suite open">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em>test_mask_account_card_parametrized</span>
+                                            </em>test_filter_by_currency_success</span>
                                         <ul>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(Visa Classic 6831982476731327-Visa Classic 6831 98** **** 1327)</span>
+                                                    </em><em class="status">passed</em>(USD-expected_ids0)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED [ 45%]<br/></span>
+                                                        <span class="stdout">tests/test_generators.py::test_filter_by_currency_success[USD-expected_ids0] PASSED [ 11%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(\u0421\u0447\u0435\u0442 64686453647365145212-\u0421\u0447\u0435\u0442 **5212)</span>
+                                                    </em><em class="status">passed</em>(EUR-expected_ids1)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED [ 54%]<br/></span>
+                                                        <span class="stdout">tests/test_generators.py::test_filter_by_currency_success[EUR-expected_ids1] PASSED [ 16%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">2 ms</div>
-                                            </em><em class="status">passed</em>test_get_date_valid</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED                         [ 63%]<br/></span>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(RUB-expected_ids2)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_filter_by_currency_success[RUB-expected_ids2] PASSED [ 22%]<br/></span>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_get_date_invalid_format</span>
+                                            </em><em class="status">passed</em>test_transaction_descriptions_empty</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED                [ 72%]<br/></span>
+                                                <span class="stdout">tests/test_generators.py::test_transaction_descriptions_empty PASSED     [ 27%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level suite open">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em>test_get_date</span>
+                                            </em>test_transaction_descriptions_parameterized</span>
                                         <ul>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(2024-03-11T02:26:18_671407-11_03_2024)</span>
+                                                    </em><em class="status">passed</em>(all_have_desc)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED [ 81%]<br/></span>
+                                                        <span class="stdout">tests/test_generators.py::test_transaction_descriptions_parameterized[all_have_desc] PASSED [ 33%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(2023-12-31T23:59:59_999999-31_12_2023)</span>
+                                                    </em><em class="status">passed</em>(missing_desc)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED [ 90%]<br/></span>
+                                                        <span class="stdout">tests/test_generators.py::test_transaction_descriptions_parameterized[missing_desc] PASSED [ 38%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(2025-01-01T00:00:00_000000-01_01_2025)</span>
+                                                    </em><em class="status">passed</em>(empty_string_desc)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED [100%]<br/></span>
+                                                        <span class="stdout">tests/test_generators.py::test_transaction_descriptions_parameterized[empty_string_desc] PASSED [ 44%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_generator_returns_iterator</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_generators.py::test_generator_returns_iterator PASSED         [ 50%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_generator_correct_formatting</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_generators.py::test_generator_correct_formatting PASSED       [ 55%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_generator_range_boundaries</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_generators.py::test_generator_range_boundaries PASSED         [ 61%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_generator_valid_ranges</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(1-1-0000 0000 0000 0001-0000 0000 0000 0001-1)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_valid_ranges[1-1-0000 0000 0000 0001-0000 0000 0000 0001-1] PASSED [ 66%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(9999-10001-0000 0000 0000 9999-0000 0000 0001 0001-3)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_valid_ranges[9999-10001-0000 0000 0000 9999-0000 0000 0001 0001-3] PASSED [ 72%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(9999999999999998-9999999999999999-9999 9999 9999 9998-9999 9999 9999 9999-2)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_valid_ranges[9999999999999998-9999999999999999-9999 9999 9999 9998-9999 9999 9999 9999-2] PASSED [ 77%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_generator_invalid_ranges</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(0-5)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_invalid_ranges[0-5] PASSED      [ 83%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(-10-5)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_invalid_ranges[-10-5] PASSED    [ 88%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(10-5)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_invalid_ranges[10-5] PASSED     [ 94%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(1-10000000000000000)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_generators.py::test_generator_invalid_ranges[1-10000000000000000] PASSED [100%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -733,7 +817,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 10.05.2026, 21:05</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:08</p>
         </div>
     </body>
 </html>

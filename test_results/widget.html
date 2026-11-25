@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_widget.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">2 ms</div>
+                <div class="time" xmlns="">0 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">2 total, </span><span class="passed">2 passed</span></strong>
+                    pytest в test_widget.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">12 total, </span><span class="passed">12 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,31 +593,145 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">2 ms</div>
+                                <div class="time">0 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
-                                    </em>test_pandas_library</span>
+                                        <div class="time">0 ms</div>
+                                    </em>test_widget</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">2 ms</div>
-                                            </em><em class="status">passed</em>test_read_transactions_from_excel_success</span>
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_mask_account_card_visa</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED [ 50%]<br/></span>
+                                                <span class="stdout">tests/test_widget.py::test_mask_account_card_visa PASSED                 [  8%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_read_transactions_from_excel_exception</span>
+                                            </em><em class="status">passed</em>test_mask_account_card_mastercard</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED [100%]<br/></span>
+                                                <span class="stdout">tests/test_widget.py::test_mask_account_card_mastercard PASSED           [ 16%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_mask_account_card_account</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_widget.py::test_mask_account_card_account PASSED              [ 25%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_mask_account_card_maestro</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_widget.py::test_mask_account_card_maestro PASSED              [ 33%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_mask_account_card_parametrized</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(Visa Classic 6831982476731327-Visa Classic 6831 98** **** 1327)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_mask_account_card_parametrized[Visa Classic 6831982476731327-Visa Classic 6831 98** **** 1327] PASSED [ 41%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(\u0421\u0447\u0435\u0442 64686453647365145212-\u0421\u0447\u0435\u0442 **5212)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_mask_account_card_parametrized[\u0421\u0447\u0435\u0442 64686453647365145212-\u0421\u0447\u0435\u0442 **5212] PASSED [ 50%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(-)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_mask_account_card_parametrized[-] PASSED      [ 58%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_get_date_valid</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_widget.py::test_get_date_valid PASSED                         [ 66%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_get_date_invalid_format</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_widget.py::test_get_date_invalid_format PASSED                [ 75%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_get_date</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(2024-03-11T02:26:18_671407-11_03_2024)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_get_date[2024-03-11T02:26:18.671407-11.03.2024] PASSED [ 83%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(2023-12-31T23:59:59_999999-31_12_2023)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_get_date[2023-12-31T23:59:59.999999-31.12.2023] PASSED [ 91%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(2025-01-01T00:00:00_000000-01_01_2025)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_widget.py::test_get_date[2025-01-01T00:00:00.000000-01.01.2025] PASSED [100%]<br/></span>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
@@ -629,7 +743,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 04.06.2026, 00:22</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:15</p>
         </div>
     </body>
 </html>

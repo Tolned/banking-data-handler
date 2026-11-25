@@ -1,10 +1,23 @@
+"""
+Модуль тестирования функций фильтрации и сортировки банковских операций.
+
+Проверяет работу filter_by_state и sort_by_date из модуля processing
+на корректную фильтрацию по статусу, сортировку по дате в обоих направлениях,
+сохранение исходного списка (иммутабельность) и обработку пустых данных.
+"""
+
+# Инструмент для указания произвольного типа значений в словарях для проверки через mypy
+from typing import Any
+
+# Фреймворк pytest для параметризации тестовых сценариев
 import pytest
 
+# Импорт тестируемых функций фильтрации и сортировки из модуля processing
 from src.processing import filter_by_state, sort_by_date
 
 
-def test_filter_by_state_empty_list(sample_date):
-    """Тест пустых входных данных"""
+def test_filter_by_state_empty_list() -> None:
+    """Тест пустых входных данных."""
     assert filter_by_state([]) == []
 
 
@@ -50,33 +63,37 @@ def test_filter_by_state_empty_list(sample_date):
         ),
     ],
 )
-def test_filter_by_state(data, state, expected):
+def test_filter_by_state(
+    data: list[dict[str, Any]],
+    state: str,
+    expected: list[dict[str, Any]],
+) -> None:
     """Тестирует фильтрацию списка словарей по заданному состоянию."""
     assert filter_by_state(data, state) == expected
 
 
-def test_sort_by_date_descending(sample_operations):
-    """Тест сортировки по убыванию (по умолчанию)"""
+def test_sort_by_date_descending(sample_operations: list[dict[str, Any]]) -> None:
+    """Тест сортировки по убыванию (по умолчанию)."""
     result = sort_by_date(sample_operations)
     assert result[0]["id"] == 3
     assert result[1]["id"] == 1
     assert result[2]["id"] == 2
 
 
-def test_sort_by_date_ascending(sample_operations):
-    """Тест сортировки по возрастанию"""
+def test_sort_by_date_ascending(sample_operations: list[dict[str, Any]]) -> None:
+    """Тест сортировки по возрастанию."""
     result = sort_by_date(sample_operations, descending=False)
     assert result[0]["id"] == 2
     assert result[1]["id"] == 1
     assert result[2]["id"] == 3
 
 
-def test_sort_by_date_empty(sample_operations):
-    """Тест работы с пустым списком"""
+def test_sort_by_date_empty() -> None:
+    """Тест работы с пустым списком."""
     assert sort_by_date([]) == []
 
 
-def test_sort_by_date_immutability(sample_operations):
+def test_sort_by_date_immutability(sample_operations: list[dict[str, Any]]) -> None:
     """Проверка, что исходный список не изменился (функция возвращает новый)."""
     original_copy = sample_operations.copy()
     sort_by_date(sample_operations)
@@ -86,15 +103,19 @@ def test_sort_by_date_immutability(sample_operations):
 @pytest.mark.parametrize(
     "operations, descending, expected_order",
     [
-        # 1. Одинаковые даты (сохранение порядка исходного списка - стабильная сортировка)
+        # 1. Одинаковые даты (сохранение порядка исходного списка — стабильная сортировка)
         (
-            [{'date': '2023-01-01', 'id': 1}, {'date': '2023-01-01', 'id': 2}],
+            [{"date": "2023-01-01", "id": 1}, {"date": "2023-01-01", "id": 2}],
             True,
-            [{'date': '2023-01-01', 'id': 1}, {'date': '2023-01-01', 'id': 2}]
+            [{"date": "2023-01-01", "id": 1}, {"date": "2023-01-01", "id": 2}],
         )
-    ]
+    ],
 )
-def test_sort_by_date_parametrized(operations, descending, expected_order):
+def test_sort_by_date_parametrized(
+    operations: list[dict[str, Any]],
+    descending: bool,
+    expected_order: list[dict[str, Any]],
+) -> None:
     """Параметризованный тест для функции sort_by_date."""
     result = sort_by_date(operations, descending)
     assert result == expected_order

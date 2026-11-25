@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_pandas_library.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">0 ms</div>
+                <div class="time" xmlns="">12 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">14 total, </span><span class="passed">14 passed</span></strong>
+                    pytest в test_pandas_library.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">4 total, </span><span class="passed">4 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,172 +593,51 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">0 ms</div>
+                                <div class="time">12 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">0 ms</div>
-                                    </em>test_generators</span>
+                                        <div class="time">12 ms</div>
+                                    </em>test_pandas_library</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_filter_by_currency_empty_list</span>
+                                                <div class="time">2 ms</div>
+                                            </em><em class="status">passed</em>test_read_transactions_csv_success</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED      [  7%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level suite open">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em>test_filter_by_currency_success</span>
-                                        <ul>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(USD-expected_ids0)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 14%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(EUR-expected_ids1)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 21%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(RUB-expected_ids2)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 28%]<br/></span>
-                                                    </li>
-                                                </ul>
+                                                <span class="stdout">tests/test_pandas_library.py::test_read_transactions_csv_success PASSED  [ 25%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_transaction_descriptions_empty</span>
+                                            </em><em class="status">passed</em>test_read_transactions_csv_file_not_found</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED     [ 35%]<br/></span>
+                                                <span class="stdout">tests/test_pandas_library.py::test_read_transactions_csv_file_not_found PASSED [ 50%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="level suite open">
+                                    <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em>test_transaction_descriptions_parameterized</span>
+                                                <div class="time">10 ms</div>
+                                            </em><em class="status">passed</em>test_read_transactions_from_excel_success</span>
                                         <ul>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(all_have_desc)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 42%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(missing_desc)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 50%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(empty_string_desc)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 57%]<br/></span>
-                                                    </li>
-                                                </ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_pandas_library.py::test_read_transactions_from_excel_success PASSED [ 75%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_generator_returns_iterator</span>
+                                            </em><em class="status">passed</em>test_read_transactions_from_excel_exception</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED         [ 64%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_generator_correct_formatting</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED       [ 71%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_generator_range_boundaries</span>
-                                        <ul>
-                                            <li class="text">
-                                                <span class="stdout">PASSED         [ 78%]<br/></span>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="level suite open">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em>test_generator_valid_ranges</span>
-                                        <ul>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(1-1-0000 0000 0000 0001-0000 0000 0000 0001-1)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 85%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(9999-10001-0000 0000 0000 9999-0000 0000 0001 0001-3)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 92%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>(9999999999999998-9999999999999999-9999 9999 9999 9998-9999 9999 9999 9999-2)</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [100%]<br/></span>
-                                                    </li>
-                                                </ul>
+                                                <span class="stdout">tests/test_pandas_library.py::test_read_transactions_from_excel_exception PASSED [100%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
@@ -770,7 +649,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 21.05.2026, 10:39</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:11</p>
         </div>
     </body>
 </html>

@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_processing.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">4 ms</div>
+                <div class="time" xmlns="">0 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">7 total, </span><span class="passed">7 passed</span></strong>
+                    pytest в test_processing.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">11 total, </span><span class="passed">11 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,86 +593,133 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">4 ms</div>
+                                <div class="time">0 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">4 ms</div>
-                                    </em>test_utils</span>
+                                        <div class="time">0 ms</div>
+                                    </em>test_processing</span>
                                 <ul>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_filter_by_state_empty_list</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_processing.py::test_filter_by_state_empty_list PASSED         [  9%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li class="level suite open">
                                         <span><em class="time">
-                                                <div class="time">4 ms</div>
-                                            </em>TestLoadTransactions</span>
+                                                <div class="time">0 ms</div>
+                                            </em>test_filter_by_state</span>
                                         <ul>
                                             <li class="level test">
                                                 <span><em class="time">
-                                                        <div class="time">1 ms</div>
-                                                    </em><em class="status">passed</em>test_file_is_empty</span>
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(data0-EXECUTED-expected0)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED     [ 14%]<br/></span>
+                                                        <span class="stdout">tests/test_processing.py::test_filter_by_state[data0-EXECUTED-expected0] PASSED [ 18%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>test_file_not_found</span>
+                                                    </em><em class="status">passed</em>(data1-CANCELED-expected1)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED    [ 28%]<br/></span>
+                                                        <span class="stdout">tests/test_processing.py::test_filter_by_state[data1-CANCELED-expected1] PASSED [ 27%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>test_io_error</span>
+                                                    </em><em class="status">passed</em>(data2-EXECUTED-expected2)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED          [ 42%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">1 ms</div>
-                                                    </em><em class="status">passed</em>test_json_decode_error</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 57%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">1 ms</div>
-                                                    </em><em class="status">passed</em>test_json_is_empty_list</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED [ 71%]<br/></span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="level test">
-                                                <span><em class="time">
-                                                        <div class="time">1 ms</div>
-                                                    </em><em class="status">passed</em>test_json_is_not_list</span>
-                                                <ul>
-                                                    <li class="text">
-                                                        <span class="stdout">PASSED  [ 85%]<br/></span>
+                                                        <span class="stdout">tests/test_processing.py::test_filter_by_state[data2-EXECUTED-expected2] PASSED [ 36%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="level test">
                                                 <span><em class="time">
                                                         <div class="time">0 ms</div>
-                                                    </em><em class="status">passed</em>test_valid_json_list</span>
+                                                    </em><em class="status">passed</em>(data3-EXECUTED-expected3)</span>
                                                 <ul>
                                                     <li class="text">
-                                                        <span class="stdout">PASSED   [100%]<br/></span>
+                                                        <span class="stdout">tests/test_processing.py::test_filter_by_state[data3-EXECUTED-expected3] PASSED [ 45%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(data4-PENDING-expected4)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_processing.py::test_filter_by_state[data4-PENDING-expected4] PASSED [ 54%]<br/></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_sort_by_date_descending</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_processing.py::test_sort_by_date_descending PASSED            [ 63%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_sort_by_date_ascending</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_processing.py::test_sort_by_date_ascending PASSED             [ 72%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_sort_by_date_empty</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_processing.py::test_sort_by_date_empty PASSED                 [ 81%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>test_sort_by_date_immutability</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_processing.py::test_sort_by_date_immutability PASSED          [ 90%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level suite open">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em>test_sort_by_date_parametrized</span>
+                                        <ul>
+                                            <li class="level test">
+                                                <span><em class="time">
+                                                        <div class="time">0 ms</div>
+                                                    </em><em class="status">passed</em>(operations0-True-expected_order0)</span>
+                                                <ul>
+                                                    <li class="text">
+                                                        <span class="stdout">tests/test_processing.py::test_sort_by_date_parametrized[operations0-True-expected_order0] PASSED [100%]<br/></span>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -686,7 +733,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 27.05.2026, 22:50</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:12</p>
         </div>
     </body>
 </html>

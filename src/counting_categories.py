@@ -1,8 +1,22 @@
+"""
+Модуль для анализа и подсчета статистики по банковским операциям.
+
+Содержит функции для группировки транзакций по категориям и
+определения количества операций в каждой из них.
+"""
+
+# Класс-словаря Counter, который умеет принимать любой список и мгновенно считать, сколько раз каждый элемент
+# встретился в этом списке
 from collections import Counter
+
+# Инструменты для аннотации типов (подсказок для разработчика и mypy)
 from typing import Any, Dict, List
 
 
-def count_operations_by_category(transactions: List[Dict[str, Any]], categories: List[str]) -> Dict[str, int]:
+def count_operations_by_category(
+    transactions: List[Dict[str, Any]],
+    categories: List[str],
+) -> Dict[str, int]:
     """
     Подсчитывает количество банковских операций для заданного списка категорий.
 

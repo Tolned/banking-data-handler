@@ -2,7 +2,7 @@
 <html xmlns:str="http://exslt.org/strings" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Test Results &mdash; </title>
+        <title>Test Results &mdash; pytest в test_external_api.py</title>
         <style type="text/css">
           html {
             height: 100%
@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">0 ms</div>
+                <div class="time" xmlns="">1 ms</div>
                 <h1>
-                    : <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">3 total, </span><span class="passed">3 passed</span></strong>
+                    pytest в test_external_api.py: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">4 total, </span><span class="passed">4 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,41 +593,51 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">0 ms</div>
+                                <div class="time">1 ms</div>
                             </em>tests</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">0 ms</div>
-                                    </em>test_counting_categories</span>
+                                        <div class="time">1 ms</div>
+                                    </em>test_external_api</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_filter_by_description_success</span>
+                                            </em><em class="status">passed</em>test_convert_currency_usd_success</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED [ 33%]<br/></span>
+                                                <span class="stdout">tests/test_external_api.py::test_convert_currency_usd_success PASSED     [ 25%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_filter_by_description_ignore_case</span>
+                                            </em><em class="status">passed</em>test_convert_currency_rub</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED [ 66%]<br/></span>
+                                                <span class="stdout">tests/test_external_api.py::test_convert_currency_rub PASSED             [ 50%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>test_filter_by_description_with_special_characters</span>
+                                            </em><em class="status">passed</em>test_convert_currency_unsupported_currency</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stdout">PASSED [100%]<br/></span>
+                                                <span class="stdout">tests/test_external_api.py::test_convert_currency_unsupported_currency PASSED [ 75%]<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>test_convert_currency_api_http_error</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">tests/test_external_api.py::test_convert_currency_api_http_error PASSED  [100%]<br/></span>
                                             </li>
                                         </ul>
                                     </li>
@@ -639,7 +649,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Сгенерировано PyCharm в 01.06.2026, 00:56</p>
+            <p>Сгенерировано PyCharm в 12.11.2026, 04:06</p>
         </div>
     </body>
 </html>
